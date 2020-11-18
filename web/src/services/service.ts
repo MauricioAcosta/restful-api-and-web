@@ -11,6 +11,20 @@ export class PersonService {
   }
 
   /**
+   * addPerson
+   */
+  public addPerson(data: any) {
+    return this.httpClient.get(
+      this.url +
+        '/add?nombre=' +
+        data.name +
+        '&nombre_madre=' +
+        data.name_mother +
+        '&nombre_padre=' +
+        data.name_father
+    );
+  }
+  /**
    * getAllPerson
    */
   public getAllPerson() {

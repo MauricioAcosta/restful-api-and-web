@@ -1,1 +1,96 @@
-<p>add-person works!</p>
+<div class="row mt-5">
+  <button type="button" class="btn btn-dark mb-2" (click)="goBack()">
+    Volver
+  </button>
+  <div class="input-group mt-3 mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default"
+        >Nombre</span
+      >
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      placeholder="Ingrese el nombre"
+      [(ngModel)]="data.name"
+      (change)="isChange()"
+    />
+  </div>
+  <div class="input-group mt-3 mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default"
+        >Nombre de la Madre</span
+      >
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      placeholder="Ingrese el nombre de la madre"
+      [(ngModel)]="data.name_mother"
+      (change)="isChange()"
+    />
+  </div>
+  <div class="input-group mt-3 mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default"
+        >Nombre del padre</span
+      >
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      placeholder="Ingrese el nombre del padre"
+      [(ngModel)]="data.name_father"
+      (change)="isChange()"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-dark mb-2"
+    [disabled]="!isIntoData"
+    (click)="addPerson()"
+  >
+    Agregar
+  </button>
+  <div
+    class="table-striped table-inverse table-responsive"
+    *ngIf="isCreatePerson"
+  >
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>ID</th>
+          <th>Nombre hijo</th>
+          <th>ID Madre</th>
+          <th>Nombre Madre</th>
+          <th>ID Padre</th>
+          <th>Nombre Padre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">{{ listPerson.id }}</td>
+          <td scope="row">{{ listPerson.nombre }}</td>
+          <td scope="row">
+            {{ listPerson.madre ? listPerson.madre.id : "N/A" }}
+          </td>
+          <td scope="row">
+            {{ listPerson.madre ? listPerson.madre.nombre : "N/A" }}
+          </td>
+          <td scope="row">
+            {{ listPerson.padre ? listPerson.padre.id : "N/A" }}
+          </td>
+          <td scope="row">
+            {{ listPerson.padre ? listPerson.padre.nombre : "N/A" }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
