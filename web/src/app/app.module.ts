@@ -7,6 +7,7 @@ import { AddPersonComponent } from './add-person/add-person.component';
 import { ListComponent } from './list/list.component';
 import { OnePersonComponent } from './one-person/one-person.component';
 import { LayoutComponent } from './layout/layout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { LayoutComponent } from './layout/layout.component';
     AddPersonComponent,
     ListComponent,
     OnePersonComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
