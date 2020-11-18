@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
       this.listPerson = response;
     });
   }
-  goBack() {
+  goBack(): void {
     this.router.navigate(['']);
   }
 }

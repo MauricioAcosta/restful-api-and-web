@@ -16,4 +16,10 @@ export class PersonService {
   public getAllPerson() {
     return this.httpClient.get(this.url + '/all');
   }
+  /**
+   * getOnePerson
+   */
+  public getOnePerson(name: string) {
+    return this.httpClient.get(this.url + '/one?nombre=' + name);
+  }
 }

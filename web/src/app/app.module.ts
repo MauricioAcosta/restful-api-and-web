@@ -8,7 +8,7 @@ import { ListComponent } from './list/list.component';
 import { OnePersonComponent } from './one-person/one-person.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     OnePersonComponent,
     LayoutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

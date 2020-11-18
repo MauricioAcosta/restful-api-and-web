@@ -1,1 +1,58 @@
-<p>one-person works!</p>
+<div class="row mt-5">
+  <button type="button" class="btn btn-dark mb-2" (click)="goBack()">
+    Volver
+  </button>
+  <div class="input-group mt-3 mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default"
+        >Nombre</span
+      >
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      placeholder="Ingrese el nombre de la persona a buscar"
+      [(ngModel)]="name"
+      (change)="isChange()"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-dark mb-2"
+    [disabled]="!isIntoData"
+    (click)="getOnePerson()"
+  >
+    Buscar
+  </button>
+  <div class="table-striped table-inverse table-responsive">
+    <table class="table" *ngIf="listPerson.length > 0">
+      <thead class="thead-inverse">
+        <tr>
+          <th>ID</th>
+          <th>Nombre hijo</th>
+          <th>ID Madre</th>
+          <th>Nombre Madre</th>
+          <th>ID Padre</th>
+          <th>Nombre Padre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listPerson">
+          <td scope="row">{{ item.id }}</td>
+          <td scope="row">{{ item.nombre }}</td>
+          <td scope="row">{{ item.madre ? item.madre.id : "N/A" }}</td>
+          <td scope="row">{{ item.madre ? item.madre.nombre : "N/A" }}</td>
+          <td scope="row">{{ item.padre ? item.padre.id : "N/A" }}</td>
+          <td scope="row">{{ item.padre ? item.padre.nombre : "N/A" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="listPerson.length === 0 && isConsult">
+    <div class="alert alert-primary" role="alert">
+      No tiene personas registradas
+    </div>
+  </div>
+</div>
