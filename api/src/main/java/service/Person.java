@@ -5,10 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
-//import javax.persistence.Table;
+import com.sun.istack.NotNull;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity // This tells hibernate to make a table out of this class
 //@Table(name="users")
 public class Person {
 
