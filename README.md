@@ -12,7 +12,15 @@ Restful API with CR actions (create and retrieve / read from CRUD) using Java wi
 - docker **> 19**
 
 ## Run docker-compose
+- postgresql
+- web
 
 ```bash
+    cd restful-api-and-web
     docker-compose up -d --build
+```
+## Run restful
+
+```bash
+    cd api && mvn clean package -DskipTests && java -jar target/*.jar
 ```
